@@ -134,7 +134,7 @@ private fun PostHeaderImage(post: Post) {
 @Composable
 private fun PostMetadata(metadata: Metadata) {
     val typography = MaterialTheme.typography
-    Row {
+    Row(Modifier.semantics(mergeDescendants = true) {}) {
         Image(
             imageVector = Icons.Filled.AccountCircle,
             contentDescription = null,
@@ -233,7 +233,7 @@ private fun BulletParagraph(
                         // Add an alignment "baseline" 1sp below the bottom of the circle
                         9.sp.roundToPx()
                     }
-                    .background(LocalContentColor.current, CircleShape),
+                    .background(LocalContentColor.current, CircleShape)
             ) { /* no content */ }
         }
         Text(
